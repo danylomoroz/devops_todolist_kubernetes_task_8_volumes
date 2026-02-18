@@ -49,7 +49,6 @@ spec:
           - name: app-config-volume
             mountPath: "/app/configs"
             readOnly: true
-
         livenessProbe:
           httpGet:
             path: /api/health
@@ -68,7 +67,7 @@ spec:
             claimName: pvc-data
         - name: app-secrets-volume
           secret:
-            secretName: app-secrets
+            secretName: app-secret
         - name: app-config-volume
           configMap:
             name: app-config
